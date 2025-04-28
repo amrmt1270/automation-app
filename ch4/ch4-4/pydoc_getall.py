@@ -13,7 +13,7 @@ def get_page(url):
         return
     if url in visited:
         return
-
+    #関数を再起的に呼び出すため訪問管理をきちんとする必要がある
     res = requests.get(url)
     res.encoding = res.apparent_encoding
     html = res.text
